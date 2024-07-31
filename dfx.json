@@ -1,5 +1,9 @@
 {
   "canisters": {
+    "my_counter_app": {
+    "main": "src/my_counter_app/main.mo",
+    "type": "motoko"
+    },
     "my_counter_app_backend": {
       "main": "src/my_counter_app_backend/main.mo",
       "type": "motoko"
@@ -22,5 +26,15 @@
     }
   },
   "output_env_file": ".env",
-  "version": 1
+  "version": 1,
+  "networks": {
+  "local": {
+    "bind": "127.0.0.1:4943",
+    "type": "ephemeral"
+  },
+  "ic": {
+    "providers": ["http://127.0.0.1:4943/api/v2/status"],
+    "type": "persistent"
+  }
+}
 }
